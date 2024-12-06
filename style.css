@@ -1,23 +1,24 @@
 body {
     font-family: 'Poppins', sans-serif;
   }
+  
+  html, body {
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+    margin: 0; /* Remove any default margin */
+    padding: 0; /* Remove any default padding */
+  }
+ .logo img {
+  width: 110px;
+  height: 80px;
+ }.top-header{
+  padding-left: 10px;
+  padding-right: 10px;
+ }
 
-  .top-header {
-    padding: 10px;
-    background-color: white; /* Primary color */
-    color: #FFFFFF; /* Text color */
-    padding: 10px 20px;
-  }
-  .top-header .logo {
-    font-size: 1.5rem;
-    font-weight: bold;
-  }
-  .top-header a {
-    text-decoration: none;
-  }
-  .top-header a:hover {
-    background-color: #0d3f82;
-  }
+  
+
+ 
+ 
   .contact-button {
     background-color: #bd141e; /* Button background */
     color: #FFFFFF; /* Button text */
@@ -56,14 +57,8 @@ body {
   }
   
   @media (max-width: 480px) {
-    .top-header {
-      padding: 15px 10px; /* Reduced padding on very small screens */
-    }
-  
-    .top-header .logo {
-      font-size: 1rem; /* Smaller logo size */
-    }
-  
+    
+ 
     .contact-button {
       font-size: 0.9rem; /* Slightly smaller button text */
     }
@@ -481,6 +476,7 @@ body {
   border-radius: 10px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  height: 300px;
 }
 
 .work-step:hover {
@@ -655,58 +651,59 @@ body {
   color: #FFFFFF;
 }
 
-
 .satisfaction-guaranteed {
-  background-color: #f8f9fa;
-  padding: 4rem 0;
+  background-color: #f9f9f9; /* Light background */
 }
 
 .satisfaction-guaranteed h2 {
-  color: #0d3f82;
+  font-size: 2.5rem; /* Large heading size */
   font-weight: bold;
-  margin-bottom: 1rem;
+  margin-bottom: 20px;
 }
 
-.stats-row {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 1rem;
+.satisfaction-guaranteed p {
+  font-size: 1rem; /* Standard text size */
+  color: #666; /* Muted color */
 }
 
 .stat-card {
-  background-color: white;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  padding: 2rem 1.5rem;
-  text-align: center;
-  width: 100%;
-  max-width: 250px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background-color: #fff; /* White card */
 }
 
 .stat-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
 }
 
 .stat-card i {
-  font-size: 3rem;
-  color: #00a551;
-  margin-bottom: 1rem;
+  display: block;
+  margin-bottom: 10px;
 }
 
 .stat-card h3 {
-  font-size: 2.5rem;
-  color: #0d3f82;
-  margin-bottom: 0.5rem;
+  font-size: 1.75rem;
   font-weight: bold;
+  margin-bottom: 5px;
 }
 
 .stat-card p {
-  font-size: 1rem;
-  color: #555555;
+  font-size: 0.9rem;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 767px) {
+  .satisfaction-guaranteed h2 {
+    font-size: 2rem;
+  }
+
+  .stat-card h3 {
+    font-size: 1.5rem;
+  }
+
+  .stat-card p {
+    font-size: 0.85rem;
+  }
 }
 
 
@@ -729,6 +726,7 @@ body {
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  height: 300px;
 }
 
 .review-card:hover {
@@ -737,11 +735,10 @@ body {
 }
 
 .customer-photo img {
-  width: 80px !important;
-  height: 80px !important;
+  width: 60px !important;
+  height: 60px !important;
   border-radius: 50%;
   margin-bottom: 1rem;
-  border: 3px solid #00a551;
 }
 
 .review-text {
@@ -884,9 +881,261 @@ body {
   color: #00a551;
 }
 
-/* Responsive design */
+
+/* General Styling for Sticky Icons */
+.sticky-icon {
+  position: fixed;
+  z-index: 1000; /* Ensure icons are on top */
+  background-color: #25d366; /* Default WhatsApp green */
+  color: #fff;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  text-decoration: none;
+  font-size: 2rem;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.sticky-icon:hover {
+  transform: scale(1.1); /* Slightly enlarge on hover */
+}
+
+/* Left-Side Sticky Icon (WhatsApp) */
+.sticky-left {
+  left: 20px; /* Adjust the position from the left */
+  bottom: 20px; /* Adjust the position from the bottom */
+  background-color: #25d366; /* WhatsApp green */
+}
+
+/* Right-Side Sticky Icon (Call) */
+.sticky-right {
+  right: 20px; /* Adjust the position from the right */
+  bottom: 20px; /* Adjust the position from the bottom */
+  background-color: #007bff; /* Blue for call */
+}
+
+.sticky-right:hover {
+  background-color: #0056b3; /* Darker blue on hover */
+}
+
+
+
+
+h2 {
+  font-size: 2.5rem !important; /* Default size for larger screens */
+  font-weight: bold;
+  color: #0d3f82; /* Neutral text color */
+  margin-bottom: 20px;
+}
+
+/* For tablets and medium devices */
+@media (max-width: 992px) {
+  h2 {
+    font-size: 2rem; /* Slightly smaller for tablets */
+  }
+}
+
+/* For small devices and mobile screens */
 @media (max-width: 768px) {
-  .footer .col-md-3 {
+  h2 {
+    font-size: 1.75rem !important; /* Smaller size for mobiles */
+  }
+}
+
+/* For extra small devices */
+@media (max-width: 576px) {
+  h2 {
+    font-size: 1.5rem; /* Further reduced for small screens */
+  }
+}
+
+
+.cta-section {
+  background-image: url('/images/car-cta.jpg'); /* Replace with your image URL */
+  background-attachment: fixed; /* Keeps the background fixed while scrolling */
+  background-size: cover; /* Ensures the image covers the entire section */
+  background-position: center; /* Centers the background image */
+  color: #fff; /* White text for contrast */
+  padding: 100px 20px; /* Spacing for content */
+  position: relative; /* To enable the overlay */
+}
+
+.cta-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6); /* Black overlay with transparency */
+  z-index: 1;
+}
+
+.cta-section .container {
+  position: relative;
+  z-index: 2; /* Brings the content above the overlay */
+}
+
+.cta-section h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+.cta-section p {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+}
+
+.cta-section .btn {
+  background-color: #ff5722;
+  border: none;
+  color: #fff;
+  padding: 10px 20px;
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+.cta-section .btn:hover {
+  background-color: #e64a19;
+  color: #fff;
+}
+
+@media (max-width: 768px) {
+  .cta-section h2 {
+    font-size: 2rem;
+  }
+
+  .cta-section p {
+    font-size: 1rem;
+  }
+
+  .cta-section .btn {
+    font-size: 1rem;
+    padding: 8px 16px;
+  }
+}
+
+.popular-cities-section {
+  position: relative;
+  background-image: url('/images/bmw-cta.jpg'); /* Replace with your image */
+  background-attachment: fixed; /* Fixed background */
+  background-size: cover;
+  background-position: center;
+  padding: 80px 20px;
+  color: #fff; /* White text for contrast */
+}
+
+/* Dark overlay */
+.popular-cities-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Dark overlay */
+  z-index: 1;
+}
+
+.popular-cities-section .container {
+  position: relative;
+  z-index: 2; /* Ensures content is above the overlay */
+}
+
+.popular-cities-section h2 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+}
+
+.city-card {
+  background-color: rgba(10, 10, 10, 0.1); /* Semi-transparent card */
+  padding: 20px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  box-shadow: 0px 4px 8px rgba(12, 11, 11, 0.2);
+}
+
+.city-card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+  color: #e8ebf0; /* Highlighted heading color */
+}
+
+.city-card ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.city-card ul li {
+  font-size: 1rem;
+  margin-bottom: 8px;
+  color: white;
+}
+
+@media (max-width: 768px) {
+  .city-card {
     text-align: center;
+  }
+
+  .city-card h3 {
+    font-size: 1.2rem;
+    font-weight: 900 !important;
+  }
+
+  .city-card ul li {
+    font-size: 0.9rem;
+  }
+}
+
+
+.popular-services {
+  padding-top: 80px;
+  padding-bottom: 80px;
+}
+
+.popular-services .section-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #333;
+}
+
+.accordion-button {
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: #0d3f82;
+  background-color: #fff;
+  border: 1px solid #ddd;
+}
+
+.accordion-button:not(.collapsed) {
+  color: #fff;
+  background-color: #0d3f82;
+}
+
+.accordion-body {
+  font-size: 1rem;
+  color: #666;
+  padding: 1.25rem;
+}
+
+.accordion-item {
+  margin-bottom: 1rem;
+}
+
+@media (max-width: 768px) {
+  .accordion-button {
+    font-size: 1.1rem;
+  }
+  .accordion-body {
+    font-size: 0.95rem;
   }
 }
