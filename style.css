@@ -955,7 +955,7 @@ h2 {
 
 
 .cta-section {
-  background-image: url('/images/car-cta.jpg'); /* Replace with your image URL */
+  background-image: url('images/car-cta.jpg'); /* Replace with your image URL */
   background-attachment: fixed; /* Keeps the background fixed while scrolling */
   background-size: cover; /* Ensures the image covers the entire section */
   background-position: center; /* Centers the background image */
@@ -1023,7 +1023,7 @@ h2 {
 
 .popular-cities-section {
   position: relative;
-  background-image: url('/images/bmw-cta.jpg'); /* Replace with your image */
+  background-image: url('images/bmw-cta.jpg'); /* Replace with your image */
   background-attachment: fixed; /* Fixed background */
   background-size: cover;
   background-position: center;
